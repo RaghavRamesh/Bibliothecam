@@ -1,8 +1,37 @@
-<h1>My Library</h1>
-{% if books_list %}
-<ul>
-	{% for b in books_list %}
-	<li>{{b.title}} | {{b.author}} | {{b.pages}}</li>
-	{% endfor %}
-</ul>
-{% endif %}	
+<html>
+	<head>
+		<title>Library</title>
+		<center>
+		<h1><u>Library</u></h1>
+		</center>
+	</head>	
+	
+	<body>
+		<center>
+		<input type="text" name="firstname"><button>Search</button><br>
+		</center>
+		<center>
+		{% if books_list %}
+		<table>
+			<tr>
+				<th>Title</th>
+				<th>Author</th>
+				<th>Pages</th>
+			</tr>
+			{% for b in books_list %}
+			<tr>
+				<td>{{b.title}}</td>
+				<td>{{b.author}}</td>
+				<td>{{b.pages}}</td>
+			<tr>
+			{% endfor %}
+		</table>
+		{% endif %}	
+		</center>
+		<center>
+		<button>Add</button>
+		<button>Update</button>
+		<button>Delete</button>
+		</center>
+	</body>
+</html>

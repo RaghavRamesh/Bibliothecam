@@ -18,7 +18,7 @@ def search_from_form(request):
 	books_list = Books.objects.all()
 	searchString = request.GET.get('search')
 	search_list = Books.objects.filter(Q(title__contains = searchString) | Q(author__contains = searchString) | Q(pages__contains = searchString)) 
-	c = Context({'books_list': search_list})
+	c = Context({'books_list': books_list, 'search_list': search_list})
 	t = loader.get_template('books/index.html')
 	return HttpResponse(t.render(c))
 

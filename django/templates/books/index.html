@@ -12,14 +12,7 @@
 	</head>	
 	
 	<body>
-		<form method='GET' action='/search/'>{% csrf_token %}
-			<center>
-			<input type="text" name="search">
-			<input type ="submit" value = "Search">
-			</center>
-		</form>
-		<br><br>
-
+		
 		<center>
 		{% if books_list %}
 		<table>
@@ -35,14 +28,13 @@
 				<td>{{b.title}}</td>
 				<td>{{b.author}}</td>
 				<td>{{b.pages}}</td>
-			<tr>
+			</tr>
 			{% endfor %}
 		</table>
 		{% endif %}
 		</center>
 
-		<br><br>
-
+		<br>
 		
 		<form method='GET' action='/add/'>{% csrf_token %}
 			<center>
@@ -53,8 +45,7 @@
 			</center>
 		</form>
 		
-		<br><br>
-
+		<br>
 		
 		<form method='GET' action='/update/'>{% csrf_token %}
 			<center>
@@ -66,7 +57,7 @@
 			</center>
 		</form>
 
-		<br><br>
+		<br><
 
 		
 		<form method='GET' action='/delete/'>{% csrf_token %}
@@ -77,8 +68,32 @@
 		</form>
 		<br>
 
+		<form method='GET' action='/search/'>{% csrf_token %}
+			<center>
+			<input type="text" name="search">
+			<input type ="submit" value = "Search">
+			</center>
+		</form>
+		
 		<center>
-		<img src="{% static "assets/Images/database.jpg" %}" />
+		{% if search_list %}
+		<table>
+			<tr>
+				<th>ID</th>
+				<th>Title</th>
+				<th>Author</th>
+				<th>Pages</th>
+			</tr>
+			{% for b in search_list %}
+			<tr>
+				<td>{{b.id}}</td>
+				<td>{{b.title}}</td>
+				<td>{{b.author}}</td>
+				<td>{{b.pages}}</td>
+			</tr>
+			{% endfor %}
+		</table>
+		{% endif %}
 		</center>
 
 	</body>

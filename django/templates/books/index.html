@@ -5,9 +5,9 @@
 
 
 	<head>
-		<title>Library</title>
+		<title>Bibliothecam</title>
 		<center>
-		<h1><u>Library</u></h1>
+		<h1><u>Bibliothecam</u></h1>
 		</center>
 	</head>	
 	
@@ -43,7 +43,9 @@
 				Enter pages: <input type="text" name="pages">
 				<input type ="submit" value = "Add">
 			</center>
+
 		</form>
+		<br>
 		
 		<br>
 		
@@ -84,7 +86,7 @@
 				<th>Author</th>
 				<th>Pages</th>
 			</tr>
-			{% for b in search_list %}
+		{% for b in search_list %}
 			<tr>
 				<td>{{b.id}}</td>
 				<td>{{b.title}}</td>
@@ -96,5 +98,8 @@
 		{% endif %}
 		</center>
 
+		{% if error %}
+			<div><center>{{error}}</center></div>
+		{% endif %}
 	</body>
 </html>

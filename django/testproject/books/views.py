@@ -9,3 +9,5 @@ def index(request):
 	t = loader.get_template('books/index.html')
 	c = Context({'books_list': books_list,})
 	return HttpResponse(t.render(c))
+
+

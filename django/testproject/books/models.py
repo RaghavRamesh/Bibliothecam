@@ -9,3 +9,5 @@ class Books(models.Model):
 	def _unicode_(self):
 		return self.title + " / " + self.author + " / " + self.pages
 
+		
+

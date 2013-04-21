@@ -13,12 +13,9 @@
 	
 	<body>
 		<center>
-		<input type="text" name="search">
-		<input type ="submit" value = "Search">
+		<input type="text" name="search"><button class = "btn btn-primary">Search</button><br>
 		</center>
-
-		<br><br>
-
+		<br>
 		<center>
 		{% if books_list %}
 		<table>
@@ -40,36 +37,30 @@
 		{% endif %}
 		</center>
 
-		<br><br>
-
-		
+		<br>
 
 		<center>
 			Enter title: <input type="text" name="title">
 			Enter author: <input type="text" name="author">
 			Enter pages: <input type="text" name="pages">
-			<input type ="submit" value = "Add">
+			<button class = "btn btn-primary">Add</button>
 		</center>
 		
 		<br><br>
-
-		
 
 		<center>
 			Enter ID: <input type="text" name="id">
 			Enter title: <input type="text" name="title">
 			Enter author: <input type="text" name="author">
 			Enter pages: <input type="text" name="pages">
-			<input type ="submit" value = "Update">
+			<button class = "btn btn-primary">Update</button>
 		</center>
 
 		<br><br>
 
-		
-
 		<center>
 			Enter ID: <input type="text" name="id">
-			<input type ="submit" value = "Delete">
+			<button class = "btn btn-primary">Delete</button>
 		</center>
 
 		<br>

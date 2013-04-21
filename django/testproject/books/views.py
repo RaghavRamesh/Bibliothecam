@@ -18,7 +18,11 @@ def search_from_form(request):
 	books_list = Books.objects.all()
 	searchString = request.GET.get('search')
 	error = "Nothing to display"
+<<<<<<< HEAD
 	search_list = Books.objects.filter(Q(title__contains = searchString) | Q(author__contains = searchString) | Q(pages__contains = searchString) | Q(genre__contains = searchString)) 
+=======
+	search_list = Books.objects.filter(Q(title__contains = searchString) | Q(author__contains = searchString) | Q(pages__contains = searchString)) 
+>>>>>>> origin/master
 	if len(searchString) > 0:
 		
 		c = Context({'books_list': books_list, 'search_list': search_list})

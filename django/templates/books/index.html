@@ -6,9 +6,7 @@
 
 	<head>
 		<title>Bibliothecam</title>
-		<center>
-		<h1><u>Bibliothecam</u></h1>
-		</center>
+		<center><h1><u>Bibliothecam</u></h1></center>
 	</head>	
 	
 	<body>
@@ -48,9 +46,8 @@
 			</center>
 
 		</form>
-		<br>
 		
-		<br>
+		
 		
 		<form method='GET' action='/update/'>{% csrf_token %}
 			<center>
@@ -63,21 +60,26 @@
 			</center>
 		</form>
 
-		<br><
+	
 
-		
 		<form method='GET' action='/delete/'>{% csrf_token %}
 			<center>
 				Enter ID: <input type="text" name="id">
 				<input type ="submit" value = "Delete">
 			</center>
 		</form>
-		<br>
+		
+		<form method='GET' action='/search_isbn/'>{% csrf_token %}
+			<center>
+			Search for record (ISBN): <input type="text" name="search_isbn">
+			<input type ="submit" value = "Go">
+			</center>
+		</form>
 
 		<form method='GET' action='/search/'>{% csrf_token %}
 			<center>
-			<input type="text" name="search">
-			<input type ="submit" value = "Search">
+			Search (by category/keyword): <input type="text" name="search">
+			<input type ="submit" value = "Go">
 			</center>
 		</form>
 		

@@ -6,14 +6,21 @@ from django.template import Context, loader
 
 from django.shortcuts import render, render_to_response
 
+from django.db.models import Q
+
 def index(request):
 	books_list = Books.objects.all()
 	t = loader.get_template('books/index.html')
 	c = Context({'books_list': books_list,})
 	return HttpResponse(t.render(c))
 
-def search_form(request):
-	return render(request, 'search_form.html')
+def search_from_form(request):
+	books_list = Books.objects.all()
+	searchString = request.GET.get('search')
+	search_list = Books.objects.filter(Q(title__contains = searchString) | Q(author__contains = searchString) | Q(pages__contains = searchString)) 
+	c = Context({'books_list': search_list})
+	t = loader.get_template('books/index.html')
+	return HttpResponse(t.render(c))
 
 def add_from_form(request):
 	title = request.GET.get('title')

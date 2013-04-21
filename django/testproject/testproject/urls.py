@@ -17,5 +17,6 @@ urlpatterns = patterns('',
     url(r'^add/$', 'books.views.add_from_form'),
     url(r'^delete/$', 'books.views.delete_from_form'),
     url(r'^update/$', 'books.views.update_from_form'),
+    url(r'^search/$', 'books.views.search_from_form'),
     
   )

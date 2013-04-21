@@ -12,11 +12,12 @@
 	</head>	
 	
 	<body>
-		<center>
-		<input type="text" name="search">
-		<input type ="submit" value = "Search">
-		</center>
-
+		<form method='GET' action='/search/'>{% csrf_token %}
+			<center>
+			<input type="text" name="search">
+			<input type ="submit" value = "Search">
+			</center>
+		</form>
 		<br><br>
 
 		<center>

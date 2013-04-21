@@ -55,14 +55,15 @@
 		<br><br>
 
 		
-
-		<center>
-			Enter ID: <input type="text" name="id">
-			Enter title: <input type="text" name="title">
-			Enter author: <input type="text" name="author">
-			Enter pages: <input type="text" name="pages">
-			<input type ="submit" value = "Update">
-		</center>
+		<form method='GET' action='/update/'>{% csrf_token %}
+			<center>
+				Enter ID: <input type="text" name="id">
+				Enter title: <input type="text" name="title">
+				Enter author: <input type="text" name="author">
+				Enter pages: <input type="text" name="pages">
+				<input type ="submit" value = "Update">
+			</center>
+		</form>
 
 		<br><br>
 

@@ -14,7 +14,8 @@ urlpatterns = patterns('',
     # Uncomment the next line to enable the admin:
     url(r'^admin/', include(admin.site.urls)),
     url(r'^books/$', 'books.views.index'),
-    url(r'^delete/$', 'books.views.delete_from_form'),
     url(r'^add/$', 'books.views.add_from_form'),
+    url(r'^delete/$', 'books.views.delete_from_form'),
+    url(r'^update/$', 'books.views.update_from_form'),
     
   )

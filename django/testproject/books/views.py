@@ -34,3 +34,25 @@ def delete_from_form(request):
 	t = loader.get_template('books/index.html')
 	c = Context({'books_list': books_list,})
 	return HttpResponse(t.render(c))
+
+def update_from_form(request):
+	id = request.GET.get('id')
+
+	newTitle = request.GET.get('title')
+	newAuthor = request.GET.get('author')
+	newPages = request.GET.get('pages')
+	updateBook = Books.objects.get(id=id)
+	if len(newTitle) == 0:
+		newTitle = updateBook.title
+	if len(newAuthor) == 0:
+		newAuthor = updateBook.author
+	if len(newPages) == 0:
+		newPages = updateBook.pages
+	updateBook.title = newTitle
+	updateBook.author = newAuthor
+	updateBook.pages = newPages
+	updateBook.save()
+	books_list = Books.objects.all()
+	t = loader.get_template('books/index.html')
+	c = Context({'books_list': books_list,})
+	return HttpResponse(t.render(c))

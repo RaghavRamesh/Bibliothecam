@@ -5,9 +5,9 @@
 
 
 	<head>
-		<title>Library</title>
+		<title>Bibliothecam</title>
 		<center>
-		<h1><u>Library</u></h1>
+		<h1><u>Bibliothecam</u></h1>
 		</center>
 	</head>	
 	
@@ -21,6 +21,7 @@
 				<th>Title</th>
 				<th>Author</th>
 				<th>Pages</th>
+				<th>Genre</th>
 			</tr>
 			{% for b in books_list %}
 			<tr>
@@ -28,6 +29,7 @@
 				<td>{{b.title}}</td>
 				<td>{{b.author}}</td>
 				<td>{{b.pages}}</td>
+				<td>{{b.genre}}</td>
 			</tr>
 			{% endfor %}
 		</table>
@@ -41,9 +43,12 @@
 				Enter title: <input type="text" name="title">
 				Enter author: <input type="text" name="author">
 				Enter pages: <input type="text" name="pages">
+				Enter genre: <input type="text" name="genre">
 				<input type ="submit" value = "Add">
 			</center>
+
 		</form>
+		<br>
 		
 		<br>
 		
@@ -53,6 +58,7 @@
 				Enter title: <input type="text" name="title">
 				Enter author: <input type="text" name="author">
 				Enter pages: <input type="text" name="pages">
+				Enter genre: <input type="text" name="genre">
 				<input type ="submit" value = "Update">
 			</center>
 		</form>
@@ -83,18 +89,23 @@
 				<th>Title</th>
 				<th>Author</th>
 				<th>Pages</th>
+				<th>Genre</th>
 			</tr>
-			{% for b in search_list %}
+		{% for b in search_list %}
 			<tr>
 				<td>{{b.id}}</td>
 				<td>{{b.title}}</td>
 				<td>{{b.author}}</td>
 				<td>{{b.pages}}</td>
+				<td>{{b.genre}}</td>
 			</tr>
 			{% endfor %}
 		</table>
 		{% endif %}
 		</center>
 
+		{% if error %}
+			<div><center>{{error}}</center></div>
+		{% endif %}
 	</body>
 </html>

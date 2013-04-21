@@ -17,16 +17,26 @@ def index(request):
 def search_from_form(request):
 	books_list = Books.objects.all()
 	searchString = request.GET.get('search')
-	search_list = Books.objects.filter(Q(title__contains = searchString) | Q(author__contains = searchString) | Q(pages__contains = searchString)) 
-	c = Context({'books_list': books_list, 'search_list': search_list})
-	t = loader.get_template('books/index.html')
-	return HttpResponse(t.render(c))
+	error = "Nothing to display"
+	search_list = Books.objects.filter(Q(title__contains = searchString) | Q(author__contains = searchString) | Q(pages__contains = searchString) | Q(genre__contains = searchString)) 
+	if len(searchString) > 0:
+		
+		c = Context({'books_list': books_list, 'search_list': search_list})
+		t = loader.get_template('books/index.html')
+		return HttpResponse(t.render(c))	
+	else:
+		c = Context({'books_list': books_list, 'error' : error})
+		t = loader.get_template('books/index.html')
+		return HttpResponse(t.render(c))
+
 
 def add_from_form(request):
+	message = "Enter data for all fields"
 	title = request.GET.get('title')
 	author = request.GET.get('author')
 	pages = request.GET.get('pages')
-	newBook = Books(title=title, author=author, pages=pages)
+	genre = request.GET.get('genre')
+	newBook = Books(title=title, author=author, pages=pages, genre=genre)
 	newBook.save()
 	books_list = Books.objects.all()
 	t = loader.get_template('books/index.html')
@@ -48,6 +58,7 @@ def update_from_form(request):
 	newTitle = request.GET.get('title')
 	newAuthor = request.GET.get('author')
 	newPages = request.GET.get('pages')
+	newGenre = request.GET.get('genre')
 	updateBook = Books.objects.get(id=id)
 	if len(newTitle) == 0:
 		newTitle = updateBook.title
@@ -55,9 +66,12 @@ def update_from_form(request):
 		newAuthor = updateBook.author
 	if len(newPages) == 0:
 		newPages = updateBook.pages
+	if len(newGenre) == 0:
+		newPages = updateBook.genre
 	updateBook.title = newTitle
 	updateBook.author = newAuthor
 	updateBook.pages = newPages
+	updateBook.genre = newGenre
 	updateBook.save()
 	books_list = Books.objects.all()
 	t = loader.get_template('books/index.html')

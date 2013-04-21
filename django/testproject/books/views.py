@@ -31,6 +31,22 @@ def search_from_form(request):
 		t = loader.get_template('books/index.html')
 		return HttpResponse(t.render(c))
 
+def search_isbn_from_form(request):
+	books_list = Books.objects.all()
+	searchString = request.GET.get('search_isbn')
+	error = "Nothing to display"	
+
+	search_isbn_list = Books.objects.filter(isbn__contains = searchString)
+	if len(searchString) > 0:
+		
+		c = Context({'books_list': books_list, 'search_list': search_list})
+		t = loader.get_template('books/index.html')
+		return HttpResponse(t.render(c))	
+	else:
+		c = Context({'books_list': books_list, 'error' : error})
+		t = loader.get_template('books/index.html')
+		return HttpResponse(t.render(c))	
+
 
 def add_from_form(request):
 	message = "Enter data for all fields"

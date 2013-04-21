@@ -19,7 +19,7 @@ def search_from_form(request):
 	searchString = request.GET.get('search')
 	error = "Nothing to display"
 
-	search_list = Books.objects.filter(Q(title__contains = searchString) | Q(author__contains = searchString) | Q(pages__contains = searchString)) 
+	search_list = Books.objects.filter(Q(isbn__contains = searchString) | Q(title__contains = searchString) | Q(author__contains = searchString) | Q(pages__contains = searchString)) 
 
 	if len(searchString) > 0:
 		
@@ -39,7 +39,7 @@ def search_isbn_from_form(request):
 	search_isbn_list = Books.objects.filter(isbn__contains = searchString)
 	if len(searchString) > 0:
 		
-		c = Context({'books_list': books_list, 'search_list': search_list})
+		c = Context({'books_list': books_list, 'search_isbn_list': search_isbn_list})
 		t = loader.get_template('books/index.html')
 		return HttpResponse(t.render(c))	
 	else:
@@ -53,8 +53,8 @@ def add_from_form(request):
 	title = request.GET.get('title')
 	author = request.GET.get('author')
 	pages = request.GET.get('pages')
-	
-	newBook = Books(title=title, author=author, pages=pages)
+	isbn = request.GET.get('isbn')
+	newBook = Books(title=title, author=author, pages=pages, isbn=isbn)
 	newBook.save()
 	books_list = Books.objects.all()
 	t = loader.get_template('books/index.html')
@@ -76,7 +76,7 @@ def update_from_form(request):
 	newTitle = request.GET.get('title')
 	newAuthor = request.GET.get('author')
 	newPages = request.GET.get('pages')
-	
+	newIsbn = request.GET.get('isbn')
 	updateBook = Books.objects.get(id=id)
 	if len(newTitle) == 0:
 		newTitle = updateBook.title
@@ -84,11 +84,12 @@ def update_from_form(request):
 		newAuthor = updateBook.author
 	if len(newPages) == 0:
 		newPages = updateBook.pages
-	
+	if len(newIsbn) == 0:
+		newPages = updateBook.isbn
 	updateBook.title = newTitle
 	updateBook.author = newAuthor
 	updateBook.pages = newPages
-	
+	updateBook.isbn = newIsbn
 	updateBook.save()
 	books_list = Books.objects.all()
 	t = loader.get_template('books/index.html')

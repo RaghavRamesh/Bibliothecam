@@ -13,7 +13,7 @@
 		
 		<center>
 		{% if books_list %}
-		<table>
+		<table class = "table-hover">
 			<tr>
 				<th>ID</th>
 				<th>Title</th>
@@ -42,9 +42,11 @@
 				Enter author: <input type="text" name="author">
 				Enter pages: <input type="text" name="pages">
 				Enter ISBN: <input type="text" name="isbn">
-				<input type ="submit" value = "Add">
+				<input class = "btn-success" type ="submit" value = "Add">
 			</center>
-
+			{% if message %}
+				<div><center>{{message}}</center></div>
+			{% endif %}
 		</form>
 		
 		
@@ -56,7 +58,7 @@
 				Enter author: <input type="text" name="author">
 				Enter pages: <input type="text" name="pages">
 				Enter ISBN: <input type="text" name="isbn">
-				<input type ="submit" value = "Update">
+				<input class = "btn-warning" type ="submit" value = "Update">
 			</center>
 		</form>
 
@@ -65,7 +67,7 @@
 		<form method='GET' action='/delete/'>{% csrf_token %}
 			<center>
 				Enter ID: <input type="text" name="id">
-				<input type ="submit" value = "Delete">
+				<input class = "btn-danger" type ="submit" value = "Delete">
 			</center>
 		</form>
 
@@ -74,13 +76,13 @@
 		<form method='GET' action='/search/'>{% csrf_token %}
 			<center>
 			Search (by category/keyword): <input type="text" name="search">
-			<input type ="submit" value = "Go">
+			<input class = "btn-info" type ="submit" value = "Go">
 			</center>
 		</form>
 		
 		<center>
 		{% if search_list %}
-		<table>
+		<table class = "table-hover">
 			<tr>
 				<th>ID</th>
 				<th>Title</th>
@@ -110,13 +112,13 @@
 		<form method='GET' action='/search_isbn/'>{% csrf_token %}
 			<center>
 			Search for record (ISBN): <input type="text" name="search_isbn">
-			<input type ="submit" value = "Go">
+			<input class = "btn-info" type ="submit" value = "Go">
 			</center>
 		</form>
 
 		<center>
 		{% if search_isbn_list %}
-		<table>
+		<table class = "table-hover">
 			<tr>
 				<th>ID</th>
 				<th>Title</th>
@@ -137,8 +139,8 @@
 		{% endif %}
 		</center>
 
-		{% if error %}
-			<div><center>{{error}}</center></div>
+		{% if error_isbn %}
+			<div><center>{{error_isbn}}</center></div>
 		{% endif %}
 		
 	</body>

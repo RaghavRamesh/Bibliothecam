@@ -22,7 +22,6 @@ def search_from_form(request):
 	search_list = Books.objects.filter(Q(isbn__contains = searchString) | Q(title__contains = searchString) | Q(author__contains = searchString) | Q(pages__contains = searchString)) 
 
 	if len(searchString) > 0:
-		
 		c = Context({'books_list': books_list, 'search_list': search_list})
 		t = loader.get_template('books/index.html')
 		return HttpResponse(t.render(c))	
@@ -36,7 +35,7 @@ def search_from_form(request):
 def search_isbn_from_form(request):
 	books_list = Books.objects.all()
 	searchString = request.GET.get('search_isbn')
-	error = "Nothing to display"	
+	error_isbn = "Nothing to display"	
 
 	search_isbn_list = Books.objects.filter(isbn__contains = searchString)
 	if len(searchString) > 0:
@@ -45,7 +44,7 @@ def search_isbn_from_form(request):
 		t = loader.get_template('books/index.html')
 		return HttpResponse(t.render(c))	
 	else:
-		c = Context({'books_list': books_list, 'error' : error})
+		c = Context({'books_list': books_list, 'error' : error_isbn})
 		t = loader.get_template('books/index.html')
 		return HttpResponse(t.render(c))	
 
@@ -59,11 +58,20 @@ def add_from_form(request):
 	pages = request.GET.get('pages')
 	isbn = request.GET.get('isbn')
 	newBook = Books(title=title, author=author, pages=pages, isbn=isbn)
-	newBook.save()
+	
+
 	books_list = Books.objects.all()
-	t = loader.get_template('books/index.html')
-	c = Context({'books_list': books_list,})
-	return HttpResponse(t.render(c))
+
+	if len(title) == 0 or len(author) == 0 or len(pages) == 0 or len(isbn) == 0:
+		t = loader.get_template('books/index.html')
+		c = Context({'books_list': books_list, 'message' : message})
+		return HttpResponse(t.render(c))
+
+	else:
+		newBook.save()
+		t = loader.get_template('books/index.html')
+		c = Context({'books_list': books_list,})
+		return HttpResponse(t.render(c))
 
 
 

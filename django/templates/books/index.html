@@ -5,7 +5,7 @@
 
 
 	<head>
-		<title>Bibliothecam</title>
+		<title>Bibliothecam - The Library</title>
 		<center><h1><u>Bibliothecam</u></h1></center>
 	</head>	
 	
@@ -41,7 +41,7 @@
 				Enter title: <input type="text" name="title">
 				Enter author: <input type="text" name="author">
 				Enter pages: <input type="text" name="pages">
-				Enter isbn: <input type="text" name="isbn">
+				Enter ISBN: <input type="text" name="isbn">
 				<input type ="submit" value = "Add">
 			</center>
 
@@ -55,7 +55,7 @@
 				Enter title: <input type="text" name="title">
 				Enter author: <input type="text" name="author">
 				Enter pages: <input type="text" name="pages">
-				Enter isbn: <input type="text" name="isbn">
+				Enter ISBN: <input type="text" name="isbn">
 				<input type ="submit" value = "Update">
 			</center>
 		</form>
@@ -68,6 +68,8 @@
 				<input type ="submit" value = "Delete">
 			</center>
 		</form>
+
+
 
 		<form method='GET' action='/search/'>{% csrf_token %}
 			<center>
@@ -86,7 +88,7 @@
 				<th>Pages</th>
 				<th>ISBN</th>
 			</tr>
-		{% for b in search_list %}
+			{% for b in search_list %}
 			<tr>
 				<td>{{b.id}}</td>
 				<td>{{b.title}}</td>
@@ -102,6 +104,8 @@
 		{% if error %}
 			<div><center>{{error}}</center></div>
 		{% endif %}
+
+		<br>
 
 		<form method='GET' action='/search_isbn/'>{% csrf_token %}
 			<center>
@@ -120,7 +124,7 @@
 				<th>Pages</th>
 				<th>ISBN</th>
 			</tr>
-		{% for b in search_isbn_list %}
+			{% for b in search_isbn_list %}
 			<tr>
 				<td>{{b.id}}</td>
 				<td>{{b.title}}</td>

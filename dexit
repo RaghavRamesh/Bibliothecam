@@ -1,0 +1,177 @@
+[33mcommit dfc4db703c4f20712a2c35fd9fbb7ac345f85bc0[m
+Author: Raghav Ramesh <raghavrnus@gmail.com>
+Date:   Mon Apr 22 20:13:30 2013 +0800
+
+    Added remote repo for Heroku
+
+[33mcommit b5d48cb34df6133029c7692d0e9b2552441d1262[m
+Merge: b3a4c85 b75bce6
+Author: Raghav Ramesh <raghavramesh94@gmail.com>
+Date:   Mon Apr 22 17:45:28 2013 +0800
+
+    Merge branch 'master' of https://github.com/RaghavRamesh/Shelf
+
+[33mcommit b3a4c85fa73d348ba36f4e1991d95c265f59b5fc[m
+Author: Raghav Ramesh <raghavramesh94@gmail.com>
+Date:   Mon Apr 22 17:45:11 2013 +0800
+
+    Deleted unwanted test files
+
+[33mcommit b75bce6135842986c9aa1bab18e7fe7c4f1fc8fe[m
+Author: RaghavRamesh <raghavramesh94@gmail.com>
+Date:   Mon Apr 22 17:44:02 2013 +0800
+
+    Create README.md
+    
+    Documentation of the app.
+
+[33mcommit 10aaa8c32022587f96c9c03d7989b2b69da21d89[m
+Author: Raghav Ramesh <raghavramesh94@gmail.com>
+Date:   Mon Apr 22 16:36:00 2013 +0800
+
+    Added CSS styling for tables and buttons
+
+[33mcommit bb3e07d096e94018828fc9b82a76329ead5260c7[m
+Author: Raghav Ramesh <raghavramesh94@gmail.com>
+Date:   Mon Apr 22 15:09:24 2013 +0800
+
+    Solved Issue#1
+
+[33mcommit 2e08613fef962d82f82e3366944ec2c675234921[m
+Author: Raghav Ramesh <raghavramesh94@gmail.com>
+Date:   Sun Apr 21 23:48:47 2013 +0800
+
+    Implemented all requirements
+
+[33mcommit dcfc3afc0e91326eeb80ddcc7a80136f8e32e9d4[m
+Author: Raghav Ramesh <raghavramesh94@gmail.com>
+Date:   Sun Apr 21 23:41:21 2013 +0800
+
+    Added ISBN field to Model and Database
+
+[33mcommit d8ab2bef4b7a46a54081d91daaf31dcee230d502[m
+Author: Raghav Ramesh <raghavramesh94@gmail.com>
+Date:   Sun Apr 21 22:39:50 2013 +0800
+
+    Added Bootstrap for TextFields
+
+[33mcommit 3c09bdb805e5afec40727d6cd8e7f2f735405502[m
+Author: Raghav Ramesh <raghavramesh94@gmail.com>
+Date:   Sun Apr 21 22:36:50 2013 +0800
+
+    Completed SEARCH_ISBN db
+
+[33mcommit 4ee188e16f120c59f0766ae3d129e2ea1d044874[m
+Author: Raghav Ramesh <raghavramesh94@gmail.com>
+Date:   Sun Apr 21 22:04:44 2013 +0800
+
+    Reverted
+
+[33mcommit 9c2af2913c28fb9d27ebdd686c1645e12481dc1c[m
+Merge: 9b56549 8d78de1
+Author: Raghav Ramesh <raghavramesh94@gmail.com>
+Date:   Sun Apr 21 21:37:54 2013 +0800
+
+    merging
+
+[33mcommit 9b5654909afe1cfbde41c4a6daca92c84c059bcf[m
+Author: Raghav Ramesh <raghavramesh94@gmail.com>
+Date:   Sun Apr 21 21:12:37 2013 +0800
+
+    Named the application Bibliothecam
+
+[33mcommit 8d78de11aec63d7957a7f4b37233a2cdb0a6e7b0[m
+Author: Raghav Ramesh <raghavramesh94@gmail.com>
+Date:   Sun Apr 21 20:39:35 2013 +0800
+
+    Named the application: Bibliothecam
+
+[33mcommit e378d5da1b019e6b58ddc71c7cc2fa0ed75b9dfd[m
+Author: Raghav Ramesh <raghavramesh94@gmail.com>
+Date:   Sun Apr 21 19:10:36 2013 +0800
+
+    Created separate SEARCH table
+    
+    Separate table to enable continuous display of Main Books list
+
+[33mcommit 7893097e447d637fbd16b3949ab3c7260e3c43ff[m
+Author: Raghav Ramesh <raghavramesh94@gmail.com>
+Date:   Sun Apr 21 18:47:59 2013 +0800
+
+    Completed SEARCH
+    
+    Displaying search results in the main table
+
+[33mcommit ae168dd230389cd60c82c24a0102476f0597c4d5[m
+Author: Raghav Ramesh <raghavramesh94@gmail.com>
+Date:   Sun Apr 21 18:23:10 2013 +0800
+
+    Completed UPDATE
+
+[33mcommit 22fca8db049e1654e7cebc9996eb5b04608f7e42[m
+Author: Raghav Ramesh <raghavramesh94@gmail.com>
+Date:   Sun Apr 21 17:53:40 2013 +0800
+
+    Completed ADD, DELETE
+
+[33mcommit 3101b6aa7c0919f7df3fd4af013c1442ee2bac6e[m
+Author: Raghav Ramesh <raghavramesh94@gmail.com>
+Date:   Sun Apr 21 14:23:03 2013 +0800
+
+    Changed static files location; Updated submit btn
+
+[33mcommit 3da4df28cbc6c850c86a75ad8e526e42809d6db6[m
+Author: Raghav Ramesh <raghavramesh94@gmail.com>
+Date:   Sun Apr 21 02:24:42 2013 +0800
+
+    Created Controller
+
+[33mcommit 36d86d3ddda8f5e146ea0a4ac527b25e758a3754[m
+Author: Raghav Ramesh <raghavramesh94@gmail.com>
+Date:   Sun Apr 21 01:34:33 2013 +0800
+
+    Collected Static Files; Updated UI
+    
+    Collected Static Files to load CSS and Images
+
+[33mcommit bb4ef9783a53f4bd9fa719c035ca1ae0b88419e5[m
+Author: Raghav Ramesh <raghavramesh94@gmail.com>
+Date:   Sat Apr 20 23:54:15 2013 +0800
+
+    Added CSS component to buttons
+    
+    Added CSS component to buttons in index.html using Bootstrap
+
+[33mcommit 530f159301ff1a5702163801338da69437ee8ff3[m
+Author: Raghav Ramesh <raghavramesh94@gmail.com>
+Date:   Sat Apr 20 23:15:26 2013 +0800
+
+    Added swing components
+    
+    Created a table, buttons for CRUD operations
+
+[33mcommit 87423fa5ea047a1b448ecca93875f2c72350ade3[m
+Author: Raghav Ramesh <raghavramesh94@gmail.com>
+Date:   Sat Apr 20 21:20:57 2013 +0800
+
+    Created Views
+
+[33mcommit f499c21e5231941b77f58d7eee706096d191cfb4[m
+Author: Raghav Ramesh <raghavramesh94@gmail.com>
+Date:   Sat Apr 20 20:54:06 2013 +0800
+
+    SQLite db created
+
+[33mcommit a8feeb630387f4c06c5cc2f46448a42015111238[m
+Author: Raghav Ramesh <raghavramesh94@gmail.com>
+Date:   Sat Apr 20 20:52:25 2013 +0800
+
+    Added data into db Books
+
+[33mcommit 47a5b6425bc70df6fe08da11162823ec43942829[m
+Author: Raghav Ramesh <raghavramesh94@gmail.com>
+Date:   Sat Apr 20 20:33:46 2013 +0800
+
+    Created Proj, Started App books, Setup db Books
+    
+    Created an empty table books under the app books

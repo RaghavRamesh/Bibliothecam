@@ -1,6 +1,3 @@
-Shelf
-=====
-
 Bibliothecam - The Library
 ==========================
 
@@ -25,28 +22,21 @@ In addition, the app also allows you to search for a book
 
 Frameworks and libraries used:
 ------------------------------
-The backend of this app is built using Django, a framework of Python. Hence, it implements MVC style. 
-Django framework, is written in Python and eases the creation of complex database systems managed web applications. 
-It is also used by famous websites including Firefox, Instagram. 
+The backend of this app is built using Django, a framework of Python. 
 
-The front end is coded in HTML and Bootstrap framework is used to aid in the design of the management interface.
-Bootstrap framework is an intuitive and a powerful tool for fast web development. 
+Bootstrap framework is used to aid in the design of the management interface.
 
-SQLite3 is used for creating the schema for the database as it comes alongwith django and did not require the installation
-of localhost servers like xampp for its working. 
+SQLite3 is used as the db. 
 
 
 Directories and their uses:
 ---------------------------
 
-- The models/database schema of this app is defined in the models.py file which can be found in: 
+- The models are defined in the models.py file which can be found in: 
 Shelf\django\testproject\books\models.py
 
-- The views or the UI and the functionality of the app is defined in views.py:
+- The views and the functionality of the app is defined in views.py:
 Shelf\django\testproject\books\views.py
-
-- The source code of the website can be found in:
-Shelf\django\templates\books\index.html
 
 
 
